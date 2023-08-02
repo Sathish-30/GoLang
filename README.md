@@ -1,6 +1,6 @@
 ### GoLang
 
-> > Installation done from - https://go.dev/ , where it is an open-source programming language supported by Google
+> Installation done from - https://go.dev/ , where it is an open-source programming language supported by Google
 
 - Go Lang mainly requires packages , which can be declared as main.
 
