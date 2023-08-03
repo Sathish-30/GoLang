@@ -13,3 +13,13 @@
 - `const conferenceTickets = 30` , In const keyword we can't change the value
 
 - Print format(Printf) function is used to print using format specifier
+
+- %v is used to display the value in a default format
+
+- %T a Go-syntax representation of the type of the value
+
+| Go | Java |
+| int8 | byte |
+| int16 | short |
+| int32 | int |
+| int64 | long |
