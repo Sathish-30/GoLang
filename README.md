@@ -16,8 +16,21 @@
 
 - %v is used to display the value in a default format
 
+- %#v a Go-syntax representation of the value
+
 - %T a Go-syntax representation of the type of the value
 
 - uint can't be assigned with a negative number
 
-- like assigning `var name = "Sathish" ` we can assign as `name := "Sathish"`
+- Like assigning `var name = "Sathish" ` we can assign as `name := "Sathish"`
+
+- Pointers are said to be as special variables
+
+- `var bookings = [10]string{"Sathish","sandi","karthi","chittappa","ratish"}` The following code is the static initialization of array
+
+- Other way of array initialization `var bookingNames [10]string`
+
+- Slice is an abstraction of an array , it is also index based
+
+- > Slices are more flexible and powerful :
+  > variable length or to get the sub array of it own
