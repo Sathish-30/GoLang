@@ -28,7 +28,15 @@ func main(){
 
 	// Array Initialization
 	// Arrays are index based 
-	var bookingNames [10]string
+
+	// Slicing initialization
+	var bookingNames []string
+
+	// To append element in the slice we do it by
+	//bookingNames = append(bookingNames , "Sathish")
+
+	// To retrieve data from slice we get it by index
+	// names[0] ... 
 
 	fmt.Print("Enter the first name : ")
 	fmt.Scan(&firstName)
@@ -42,7 +50,7 @@ func main(){
 	fmt.Print("Enter the user tickets : ")
 	fmt.Scan(&userTickets)
 
-	bookingNames[0] = firstName+" "+lastName
+	bookingNames = append( bookingNames, firstName+" "+lastName)
 
 	remainingTickets -= userTickets
 
