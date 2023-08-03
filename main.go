@@ -22,9 +22,11 @@ func main(){
 
 	var userName string
 	var userTickets int
+	var pricePerTicket float32
 	userName = "Sathish"
 	userTickets = 2
-	fmt.Printf("The user name %#v and the ticktes owned are %#v\n",userName,userTickets)
+	pricePerTicket = 14.6;
+	fmt.Printf("The user name %#v and the ticktes owned are %#v and the cost of the ticket is %v\n",userName,userTickets,pricePerTicket)
 	fmt.Printf("The user name data type is %T and the ticktes owned data type is %T",userName,userTickets)
 }
 

@@ -17,3 +17,7 @@
 - %v is used to display the value in a default format
 
 - %T a Go-syntax representation of the type of the value
+
+- uint can't be assigned with a negative number
+
+- like assigning `var name = "Sathish" ` we can assign as `name := "Sathish"`
