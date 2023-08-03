@@ -30,5 +30,4 @@
 
 - Other way of array initialization `var bookingNames [10]string`
 
-- > Slice is an abstraction of an array , it is also index based
-  > Slices are more flexible and powerful :variable length or to get the sub array of it own
+- Slice is an abstraction of an array , it is also index based .Slices are more flexible and powerful :variable length or to get the sub array of it own
