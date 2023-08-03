@@ -7,3 +7,9 @@
 - It also requires a main method where it can start the program execution.
 
 - Where it's functions are mainly retrieved from the packages , there are many packages (fmt) is the package for getting the print method.
+
+- If we declare a varibale but not used the variable it will throw a error
+
+- `const conferenceTickets = 30` , In const keyword we can't change the value
+
+- Print format(Printf) function is used to print using format specifier

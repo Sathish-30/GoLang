@@ -6,6 +6,17 @@ import "fmt"
 
 // It requires a entry point , mean a main function
 func main(){
-	fmt.Println("Welcome to our conference booking application")
-	fmt.Println("Get your ticktes here to attend")
+	// If we declare a varibale but not used the variable it will throw a error
+	var conferenceName = "Go Conference"
+	// In const keyword we can't change the value 
+	const conferenceTickets = 50
+	var remainingTickets = 30
+
+	// Print format function is used to print using format specifier
+	fmt.Printf("Welcome to %v booking application\n",conferenceName)
+
+	fmt.Printf("The total conference Tickets : %v\n",conferenceTickets)
+
+	fmt.Printf("Remaining Tickets : %v", remainingTickets )
 }
+
