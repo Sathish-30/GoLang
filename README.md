@@ -17,10 +17,3 @@
 - %v is used to display the value in a default format
 
 - %T a Go-syntax representation of the type of the value
-
-| Go | Java |<br />
-|-------|-------|<br />
-| int8 | byte |<br />
-| int16 | short |<br />
-| int32 | int |<br />
-| int64 | long |<br />
