@@ -28,15 +28,25 @@
 
 - Pointers are said to be as special variables
 
+#### Arrays
+
+<br />
+
 - `var bookings = [10]string{"Sathish","sandi","karthi","chittappa","ratish"}` The following code is the static initialization of array
 
 - Other way of array initialization `var bookingNames [10]string`
+
+##### Slice
+
+<br />
 
 - Slice is an abstraction of an array , it is also index based . Slices are more flexible and powerful :variable length or to get the sub array of it own
 
 - To declare a slice `var names []string` , it is same as the declaration of the array but the no of elements are not specified
 
 - To append or add value is done by `names = append(names , "Sathish")`
+
+#### Noteable Statement
 
 - There is only one loop that is 'for' loop
 
