@@ -1,5 +1,7 @@
 ### GoLang
 
+<br/>
+
 > Installation done from - https://go.dev/ , GoLang is an open-source programming language supported by Google
 
 - Go Lang mainly requires packages , which can be declared as main.
@@ -37,3 +39,9 @@
 - To append or add value is done by `names = append(names , "Sathish")`
 
 - There is only one loop that is 'for' loop
+
+- \_underscore is used to ignore the variable
+
+- Conditional statement are same as in the other programming language
+
+- Switch statement is used by checking it with the corresponidng case statement
