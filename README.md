@@ -27,6 +27,7 @@
 - Like assigning `var name = "Sathish" ` we can assign as `name := "Sathish"`
 
 - Pointers are said to be as special variables
+  <br />
 
 #### Arrays
 
@@ -35,6 +36,7 @@
 - `var bookings = [10]string{"Sathish","sandi","karthi","chittappa","ratish"}` The following code is the static initialization of array
 
 - Other way of array initialization `var bookingNames [10]string`
+  <br />
 
 ##### Slice
 
