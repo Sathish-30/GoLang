@@ -72,3 +72,17 @@
 #### Packages
 
 - A package is collection of Go files
+
+-
+
+#### Scopes
+
+- There are three levels of scopes they are Local , Package , Global
+
+- Local -> Function level scope used within a block of code
+
+- Package -> Declared outside all functions , can be used everyWhere in the same package
+
+- global -> by Using capitalized variable , ca be accessed from any package
+
+#### Maps
