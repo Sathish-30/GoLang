@@ -53,3 +53,22 @@
 - Conditional statement are same as in the other programming language
 
 - Switch statement is used by checking it with the corresponidng case statement
+
+#### Functions
+
+> `func add(x int, y int) int { return x + y }`
+
+- The syntax of func keyword describing that given is a function along with the function name and () paranthesis which will have empty paramater or a value parameter then the return type
+
+- Notes :- Function is only executed , when "called!",
+  you can call a function as many times you want , so a function is also used to reduce code duplication
+
+- We can return multiple elements
+
+#### Package Level Variable
+
+- variable declared outside the function within package , where it can't be decalared with `names := "sathish"` , where it can be declared with const and var keyword
+
+#### Packages
+
+- A package is collection of Go files
