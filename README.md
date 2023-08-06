@@ -73,8 +73,6 @@
 
 - A package is collection of Go files
 
--
-
 #### Scopes
 
 - There are three levels of scopes they are Local , Package , Global
@@ -86,3 +84,13 @@
 - global -> by Using capitalized variable , ca be accessed from any package
 
 #### Maps
+
+- Maps unique keys to value , where data can be retrieved by using keys
+
+- `var userData = make(map[string]string);` make keyword is used to create the map with key and value as same string data type
+
+#### Struct
+
+- type keyword is used to create a custom type called user data.
+
+- struct gives mixed data types , defining a structures of the user type

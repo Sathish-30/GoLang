@@ -6,7 +6,7 @@ package main
 import (
 	"Booking-App/helper"
 	"fmt"
-	"strings"
+	"strconv"
 )
 
 // It requires a entry point , mean a main function
@@ -40,7 +40,6 @@ func main(){
 	}
 
 	*/
-
 	var remainingTickets uint
 	const totalTickets uint = 10
 	remainingTickets = totalTickets
@@ -52,9 +51,15 @@ func main(){
 	// Array Initialization
 	// Arrays are index based 
 
-	// Slicing initialization
-	var bookingNames []string
+	// Slicing of map initialization
+	var bookingDetails = make([]map[string]string , 0)
 
+	type UserData struct {
+		firstName string
+		lastName string
+		emailID string
+		numberOfTickets uint
+	}
 	// To append element in the slice we do it by
 	//bookingNames = append(bookingNames , "Sathish")
 
@@ -62,9 +67,10 @@ func main(){
 	// names[0] ... 
 	for {
 		if remainingTickets == 0 {
-			fmt.Printf("The first Name of the users who booked the tickets : %v\n",printFirstNamesOfPersons(bookingNames));
+			fmt.Printf("The first Name of the users who booked the tickets : %v\n",printFirstNamesOfPersons(bookingDetails));
 			break;
 		}
+
  		firstName , lastName , emailID , userTickets := getUserInput()
 		status := false 
 		isValidName , isValidEmail := helper.CheckValidUser(firstName , lastName , emailID )
@@ -93,9 +99,17 @@ func main(){
 				status = true;
 			}
 			if !status{
-				bookingNames = append( bookingNames, firstName+" "+lastName)
+				var userData = make(map[string]string);
+				userData["firstName"] = firstName
+				userData["lastName"] = lastName
+				userData["emailID"] = emailID
+				// The below line of code will convert the uint to a string
+				// strconv is a package which help in conversion of variables to strings
+				userData["noOfTickets"] = strconv.FormatUint(uint64(userTickets),10)
+				bookingDetails = append(bookingDetails , userData)
 				fmt.Printf("Thank you %v %v for booking %v tickets. you will receive a confirmation email at %v\n",firstName,lastName,userTickets,emailID)
 			}
+
 			
 			
 			// noTicketRemaining := remainingTickets == 0
@@ -111,11 +125,10 @@ func main(){
 	}
 }  
 
-func printFirstNamesOfPersons(bookingNames []string) []string {
+func printFirstNamesOfPersons(bookingDetails []map[string]string) []string {
 	firstNamesOfPersons := []string{}
-	for _ , name :=   range bookingNames{
-		var names = strings.Fields(name)
-		firstNamesOfPersons = append(firstNamesOfPersons, names[0])
+	for _ , booking :=   range bookingDetails{
+		firstNamesOfPersons = append(firstNamesOfPersons, booking["firstName"])
 	}	
 	return firstNamesOfPersons;
 }
