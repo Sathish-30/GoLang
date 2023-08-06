@@ -6,9 +6,16 @@ package main
 import (
 	"Booking-App/helper"
 	"fmt"
-	"strconv"
 )
 
+type UserData struct {
+	firstName string
+	lastName string
+	emailID string
+	numberOfTickets uint
+}
+// Slicing of map initialization
+var bookingDetails = make([]UserData, 0)
 // It requires a entry point , mean a main function
 func main(){
 	// If we declare a varibale but not used the variable it will throw a error
@@ -50,16 +57,9 @@ func main(){
 
 	// Array Initialization
 	// Arrays are index based 
+	
 
-	// Slicing of map initialization
-	var bookingDetails = make([]map[string]string , 0)
-
-	type UserData struct {
-		firstName string
-		lastName string
-		emailID string
-		numberOfTickets uint
-	}
+	
 	// To append element in the slice we do it by
 	//bookingNames = append(bookingNames , "Sathish")
 
@@ -67,7 +67,7 @@ func main(){
 	// names[0] ... 
 	for {
 		if remainingTickets == 0 {
-			fmt.Printf("The first Name of the users who booked the tickets : %v\n",printFirstNamesOfPersons(bookingDetails));
+			fmt.Printf("The first Name of the users who booked the tickets : %v\n",printFirstNamesOfPersons());
 			break;
 		}
 
@@ -81,7 +81,7 @@ func main(){
 		// isValidTickets := userTickets > 0 && userTickets <= remainingTickets
 
 		if isValidEmail && isValidName {
-			remainingTickets -= userTickets
+			
 
 			//fmt.Printf("The first name is %#v and the last name is %#v and the email ID is %v\n",firstName,lastName,emailID)
 			
@@ -91,25 +91,30 @@ func main(){
 
 			//fmt.Printf("The type of the array %T\n",bookingNames)
 
-			//fmt.Printf("The length of the array %v\n",len(bookingNames))
 			if checkTickets(userTickets , remainingTickets){
+				remainingTickets -= userTickets
+			}else{
 				fmt.Println("The Tickets limit have been exceeded")
 				remainingTickets += userTickets
 				fmt.Printf("You can only book seats for limited remaining seats %v\n",remainingTickets)
 				status = true;
 			}
-			if !status{
-				var userData = make(map[string]string);
-				userData["firstName"] = firstName
-				userData["lastName"] = lastName
-				userData["emailID"] = emailID
+			//fmt.Printf("The length of the array %v\n",len(bookingNames))
+			if !status {
+				var userData = UserData{
+					firstName: firstName,
+					lastName: lastName,
+					emailID: emailID,
+					numberOfTickets: userTickets,
+				};
+			
 				// The below line of code will convert the uint to a string
 				// strconv is a package which help in conversion of variables to strings
-				userData["noOfTickets"] = strconv.FormatUint(uint64(userTickets),10)
 				bookingDetails = append(bookingDetails , userData)
 				fmt.Printf("Thank you %v %v for booking %v tickets. you will receive a confirmation email at %v\n",firstName,lastName,userTickets,emailID)
 			}
 
+			
 			
 			
 			// noTicketRemaining := remainingTickets == 0
@@ -117,7 +122,6 @@ func main(){
 
 		
 		}else{
-			
 			if !(isValidEmail && isValidName){
 				fmt.Println("There is a error in the given person detail ")
 			}
@@ -125,10 +129,10 @@ func main(){
 	}
 }  
 
-func printFirstNamesOfPersons(bookingDetails []map[string]string) []string {
+func printFirstNamesOfPersons() []string {
 	firstNamesOfPersons := []string{}
 	for _ , booking :=   range bookingDetails{
-		firstNamesOfPersons = append(firstNamesOfPersons, booking["firstName"])
+		firstNamesOfPersons = append(firstNamesOfPersons, booking.firstName)
 	}	
 	return firstNamesOfPersons;
 }
@@ -136,8 +140,8 @@ func printFirstNamesOfPersons(bookingDetails []map[string]string) []string {
 
 
 func checkTickets(userTickets uint , remainingTickets uint) bool{
-	isValidTickets := remainingTickets > 0 && userTickets <= remainingTickets
-	return isValidTickets
+	isValidTickets := userTickets <= remainingTickets
+	return isValidTickets;
 }
 
 func getUserInput() (string , string , string , uint){

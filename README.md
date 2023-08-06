@@ -94,3 +94,6 @@
 - type keyword is used to create a custom type called user data.
 
 - struct gives mixed data types , defining a structures of the user type
+
+- User data objects `var userData = UserDat{firstName: firstName,lastName: lastName,emailID: emailID,
+numberOfTickets: userTickets,};`
