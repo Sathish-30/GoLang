@@ -6,6 +6,8 @@ package main
 import (
 	"Booking-App/helper"
 	"fmt"
+	"sync"
+	"time"
 )
 
 type UserData struct {
@@ -15,7 +17,9 @@ type UserData struct {
 	numberOfTickets uint
 }
 // Slicing of map initialization
-var bookingDetails = make([]UserData, 0)
+var bookingDetails = make([]UserData, 0);
+
+var Wg = sync.WaitGroup{};
 // It requires a entry point , mean a main function
 func main(){
 	// If we declare a varibale but not used the variable it will throw a error
@@ -48,7 +52,8 @@ func main(){
 
 	*/
 	var remainingTickets uint
-	const totalTickets uint = 10
+	const totalTickets uint = 5
+
 	remainingTickets = totalTickets
 
 	// It is for Initializing a static array element
@@ -91,13 +96,17 @@ func main(){
 
 			//fmt.Printf("The type of the array %T\n",bookingNames)
 
-			if checkTickets(userTickets , remainingTickets){
-				remainingTickets -= userTickets
-			}else{
+			if !checkTickets(userTickets , remainingTickets){
 				fmt.Println("The Tickets limit have been exceeded")
 				remainingTickets += userTickets
 				fmt.Printf("You can only book seats for limited remaining seats %v\n",remainingTickets)
 				status = true;
+			}else{
+				remainingTickets -= userTickets
+				// To obtain concurreny , the task alone move to separate thread
+				Wg.Add(1)
+				go sendTicket(userTickets , firstName , lastName , emailID);
+
 			}
 			//fmt.Printf("The length of the array %v\n",len(bookingNames))
 			if !status {
@@ -127,6 +136,7 @@ func main(){
 			}
 		}
 	}
+	Wg.Wait();
 }  
 
 func printFirstNamesOfPersons() []string {
@@ -162,4 +172,15 @@ func getUserInput() (string , string , string , uint){
 		fmt.Print("Enter the user tickets : ");
 		fmt.Scan(&userTickets);
 		return firstName , lastName , emailID , userTickets;
+}
+
+func sendTicket(userTicktes uint , firstName string , lastName string , email string){
+	// In time package there is a Sleep method , which will hold the program from execution
+	time.Sleep(5 * time.Second)
+	// Sprintf is used to store it in a string varibale
+	ticket := fmt.Sprintf("%v tickets for %v %v", userTicktes , firstName , lastName );
+	fmt.Println("##############################");
+	fmt.Printf("Sending ticket : \n%v \nto email address %v\n",ticket , email)
+	fmt.Println("##############################");
+	Wg.Done()
 }

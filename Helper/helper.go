@@ -1,6 +1,8 @@
 package helper
 
-import "strings"
+import (
+	"strings"
+)
 
 // capitalize the function name which will be exported
 func CheckValidUser(firstName string, lastName string, emailID string) (bool, bool) {
@@ -10,3 +12,5 @@ func CheckValidUser(firstName string, lastName string, emailID string) (bool, bo
 
 	return isValidName, isValidEmail
 }
+
+

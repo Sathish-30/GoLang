@@ -97,3 +97,30 @@
 
 - User data objects `var userData = UserDat{firstName: firstName,lastName: lastName,emailID: emailID,
 numberOfTickets: userTickets,};`
+
+#### Concurrency
+
+- `time.Sleep(5 * time.Second)` which will hold the program for 5 seconds
+
+- Concurreny in Go is cheap and easy
+
+- Main thread doesn't wait for the sendTicket thread to finish , next line of code will be executed immediately
+
+- "go" keyword starts a new goroutine , A goroutine is a lightweight thread managed by the Go runtime
+
+- To make the goRoutines to be completed after the main func we need to use WaitGroup{} from sync package
+
+- sync provides basic synchronization functionality
+
+- Add - sets the number of goroutines to wait for
+  (Increases the counter by the provided number)
+
+- Wait - Blocks until the waitGroup counter is 0
+
+- > Writing concurrent code in other language is more complex and more overhead , Threads vs Goroutines -> Creating a threads is more expensive , slow startup time
+
+- Go is using , What's called a "Green thread"
+
+- Abstraction of the actual thread
+
+- Channels are a built-in functionalities for goroutines to talk with eachother
