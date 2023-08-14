@@ -1,10 +1,13 @@
 package main
 
-import "Booking-App/arrays"
+import (
+	"Booking-App/maps"
+)
 
 func main() {
 	//arrays.SliceDeclaration()
-	arrays.ArraysDeclaration()
+	//arrays.ArraysDeclaration()
+	maps.MapInitialization()
 }
 
 //type UserData struct {

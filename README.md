@@ -54,6 +54,8 @@
 
 - Switch statement is used by checking it with the corresponidng case statement
 
+- The variable of if statement can be accessed within the else block also , but can't be accessed from the outside scope
+
 #### Functions
 
 > `func add(x int, y int) int { return x + y }`
