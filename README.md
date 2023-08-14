@@ -42,7 +42,7 @@
 
 - To declare a slice `var names []string` , it is same as the declaration of the array but the no of elements are not specified
 
-- To append or add value is done by `names = append(names , "Sathish")`
+- To append or add value is done by `names = append(names , "Sathish")` , where the append method takes a slice as a first argument and the other one as a element or a group of elements
 
 #### Noteable Statement
 
@@ -90,6 +90,8 @@
 - Maps unique keys to value , where data can be retrieved by using keys
 
 - `var userData = make(map[string]string);` make keyword is used to create the map with key and value as same string data type
+
+- They are not stored as in the insertion order
 
 #### Struct
 
