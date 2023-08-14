@@ -7,8 +7,8 @@ func main() {
 	//arrays.ArraysDeclaration()
 	//maps.MapInitialization()
 	//arrays.AddElementAtFirst(10)
-	arrays.DeleteArrayAtIndex(4, 10)
-
+	//arrays.DeleteArrayAtIndex(4, 10)
+	arrays.AddByRestOperator(1, 2, 3, 4, 5, 6)
 }
 
 //type UserData struct {

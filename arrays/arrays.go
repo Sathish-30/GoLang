@@ -50,3 +50,14 @@ func DeleteArrayAtIndex(index int, itr int) {
 		fmt.Print(e, " ")
 	}
 }
+
+func AddByRestOperator(n ...int) {
+	//sum := 0
+	//for _, e := range n {
+	//	sum += e
+	//}
+	//fmt.Printf("The sum of elements is : %v", sum)
+	var nums []int
+	nums = append(nums, n...)
+	fmt.Print(nums)
+}
