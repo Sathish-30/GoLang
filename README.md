@@ -56,6 +56,10 @@
 
 - The variable of if statement can be accessed within the else block also , but can't be accessed from the outside scope
 
+- `nil` in Go means a zero value for pointers, interfaces, maps, slices, and channels. It means the value is uninitialized
+
+- In Javascript for the un-initialized variable will be undefined. In the same way Golang has nil as default value for all the un-initalized data types.
+
 #### Functions
 
 > `func add(x int, y int) int { return x + y }`
