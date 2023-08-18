@@ -1,6 +1,8 @@
 package main
 
-import "Booking-App/arrays"
+import (
+	"Booking-App/concepts"
+)
 
 func main() {
 	//arrays.SliceDeclaration()
@@ -8,7 +10,9 @@ func main() {
 	//maps.MapInitialization()
 	//arrays.AddElementAtFirst(10)
 	//arrays.DeleteArrayAtIndex(4, 10)
-	arrays.AddByRestOperator(1, 2, 3, 4, 5, 6)
+	//arrays.AddByRestOperator(1, 2, 3, 4, 5, 6)
+	concepts.CheckType()
+	concepts.TypeAlias()
 }
 
 //type UserData struct {
