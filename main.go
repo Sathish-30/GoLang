@@ -1,6 +1,9 @@
 package main
 
-import "Booking-App/arrays"
+import (
+	"Booking-App/interface"
+	"fmt"
+)
 
 func main() {
 	//arrays.SliceDeclaration()
@@ -8,7 +11,16 @@ func main() {
 	//maps.MapInitialization()
 	//arrays.AddElementAtFirst(10)
 	//arrays.DeleteArrayAtIndex(4, 10)
-	arrays.AddByRestOperator(1, 2, 3, 4, 5, 6)
+	//arrays.AddByRestOperator(1, 2, 3, 4, 5, 6)
+	var circleShape _interface.Shape
+	circleShape = _interface.Circle{Radius: 11.5}
+	var rectangleShape _interface.Shape
+	rectangleShape = _interface.Rectangle{
+		Width:  11.3,
+		Height: 12.6,
+	}
+	fmt.Printf("The area of the circle is : %.2f\n", circleShape.Area())
+	fmt.Printf("The area of the rectangle is : %.2f\n", rectangleShape.Area())
 }
 
 //type UserData struct {
