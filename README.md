@@ -60,6 +60,10 @@
 
 - In Javascript for the un-initialized variable will be undefined. In the same way Golang has nil as default value for all the un-initalized data types.
 
+- Defining New Types: You can create new types by using the type keyword followed by a name and the underlying type that you want to base your new type on. This is often used to add semantic meaning to existing types or to encapsulate complex data structures.
+
+- Type Aliases : Type aliases are created using the type keyword to give an existing type another name. This doesn't create a new type; it just provides an alternative name for an existing type.
+
 #### Functions
 
 > `func add(x int, y int) int { return x + y }`
