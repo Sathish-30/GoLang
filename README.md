@@ -110,6 +110,14 @@
 - User data objects `var userData = UserDat{firstName: firstName,lastName: lastName,emailID: emailID,
 numberOfTickets: userTickets,};`
 
+#### Error Handling
+
+- The error is an interface type. An error variable represents any value that can describe itself as a string. Here is the interface’s declaration `type error interface {
+  Error() string
+  }`
+
+- 
+
 #### Concurrency
 
 - `time.Sleep(5 * time.Second)` which will hold the program for 5 seconds
